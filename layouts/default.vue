@@ -58,6 +58,7 @@ html{
   height: 100%;
   position: fixed;
   top: 0;
+  right: 11px;
 }
 
 .uploaded-image{

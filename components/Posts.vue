@@ -3,6 +3,18 @@
     <div class="posts overflow-scroll mb-24">
         <post v-for="(post,index) in posts" :key="index" :post="post" />
     </div>
+    <div class="sidebar">
+        <img class="sidebar-icon" src="/images/tomo.png">
+    　　<div class="sidebar-text">
+            <ol class="sidebar-profile">
+                <li>Name：永堀　友裕</li>
+                <li>E-mail：Bou-zu1997@outlook.jp</li>
+                <li>GitHubアカウント：Tomohiro Nagahori</li>
+            </ol>
+            <button class="sidebar-link"><a href="https://slack-clone-app-3f955.web.app/">もう一つの作品はこちら</a></button>
+        </div>
+
+    </div>
     <div v-if="isAuthenticated && modalVisible" class="modal">
         <div class="actions mt-4 flex justify-between px-8">
             <div class="back-btn vertical-middle" @click="modalVisible = false">
@@ -47,11 +59,7 @@
             <el-button size="small" type="primary" @click="login">Login</el-button>
         </div>
     </div>
-    <div class="sidebar">
-        <div class="sidebar__img">
-            <img src="/images/logo.png" alt="">
-        </div>
-    </div>
+    
 </div>
 </template>
 
@@ -165,11 +173,44 @@ img{
 }
 
 .sidebar{
-    width: 34%;
+    width: 400px;
+    height: 800px;
     position: fixed;
-    right: 0;
-    top: 100px;
+    right: 50px;
+    top: 50px;
+    background-color: rgb(234, 235, 224);
 }
 
+.sidebar-icon {
+    width: 70%;
+    height: 35%;
+    border-radius: 180px;
+    position: relative;
+    top: 45px;
+    margin: 0 auto;
+}
+
+.sidebar-text {
+    font-size: 8px;
+    padding: 100px 60px;
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+}
+.sidebar-link {
+    border-radius: 5px;
+    background-color: blueviolet;
+    font-size: 15px;
+    color: orange;
+    box-shadow: 0 5px rgb(81, 12, 145);
+    cursor: pointer;
+}
+
+.sidebar-link:active {
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+
+}
 
 </style>
